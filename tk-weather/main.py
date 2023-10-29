@@ -54,10 +54,12 @@ def search():
 
 root = ttkbootstrap.Window(themename="morph")
 root.title("Weather App")
-root.geometry("400x400")
+root.geometry("600x600")
 
 # Entry widget to enter the name of the city
 city_entry = ttkbootstrap.Entry(root, font="Helvetica, 18")
+city_entry.insert(0, "What's the weather like?")
+city_entry.bind("<FocusIn>", lambda args: city_entry.delete('0', 'end'))
 city_entry.pack(pady=10)
 
 # Button wdiget to start searching for the weather
